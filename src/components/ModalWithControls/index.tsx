@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariant } from '../Button';
-import Modal from '../Modal';
+import { Modal } from '../Modal';
 
 import s from './index.module.scss';
-import { useTranslation } from 'react-i18next';
 
-const ModalWithControls = () => {
+export const ModalWithControls = () => {
   const { t } = useTranslation();
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -31,5 +31,3 @@ const ModalWithControls = () => {
     </div>
   );
 };
-
-export default ModalWithControls;

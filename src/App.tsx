@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from './components/Layout';
-import OperationSummary from './components/OperationSummary';
-import OperationView from './components/OperationView';
+import { Layout } from './components/Layout';
+import { OperationSummary } from './components/OperationSummary';
 import { Category } from './types';
 import { ThemeProvider } from './theming';
 import { LocalizationProvider } from './localization';
-import ModalWithControls from './components/ModalWithControls';
+import { ModalWithControls } from './components/ModalWithControls';
+import { OperationViewSection } from './sections/OperationViewSection';
 
 function App() {
   return (
@@ -19,41 +19,7 @@ function App() {
             title="Покупка продуктов"
             description="Покупка продуктов в местном супермаркете."
           />
-          <OperationView
-            amount={100.0}
-            category={Category.marketing}
-            title="Покупка продуктов"
-            description="Покупка продуктов в местном супермаркете."
-            date={new Date(2023, 8, 30)}
-          />
-          <OperationView
-            amount={100.0}
-            category={Category.marketing}
-            title="Покупка продуктов"
-            description="Покупка продуктов в местном супермаркете."
-            date={new Date(2023, 8, 30)}
-          />
-          <OperationView
-            amount={100.0}
-            category={Category.marketing}
-            title="Покупка продуктов"
-            description="Покупка продуктов в местном супермаркете."
-            date={new Date(2023, 8, 30)}
-          />
-          <OperationView
-            amount={100.0}
-            category={Category.marketing}
-            title="Покупка продуктов"
-            description="Покупка продуктов в местном супермаркете."
-            date={new Date(2023, 8, 30)}
-          />
-          <OperationView
-            amount={100.0}
-            category={Category.marketing}
-            title="Покупка продуктов"
-            description="Покупка продуктов в местном супермаркете."
-            date={new Date(2023, 8, 30)}
-          />
+          <OperationViewSection />
         </Layout>
       </LocalizationProvider>
     </ThemeProvider>

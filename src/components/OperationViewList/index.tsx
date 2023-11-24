@@ -1,5 +1,5 @@
 import React from 'react';
-import OperationView, { OperationViewProps } from '../OperationView';
+import { OperationView, OperationViewProps } from '../OperationView';
 
 import s from './index.module.scss';
 

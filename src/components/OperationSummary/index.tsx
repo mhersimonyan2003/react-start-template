@@ -9,7 +9,8 @@ interface Props {
   title: string;
   description: string;
 }
-const OperationSummary: React.FC<Props> = ({ amount, category, title, description }) => {
+
+export const OperationSummary: React.FC<Props> = ({ amount, category, title, description }) => {
   return (
     <div className={s['operation-summary']}>
       <div className={s['operation-summary__amount']}>Сумма: {amount} руб.</div>
@@ -19,5 +20,3 @@ const OperationSummary: React.FC<Props> = ({ amount, category, title, descriptio
     </div>
   );
 };
-
-export default OperationSummary;

@@ -5,7 +5,7 @@ import SunIcon from '../../../../icons/sun.svg';
 
 import s from './index.module.scss';
 
-const ThemeToggle: React.FC = () => {
+export const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
@@ -14,5 +14,3 @@ const ThemeToggle: React.FC = () => {
     </button>
   );
 };
-
-export default ThemeToggle;
