@@ -23,7 +23,6 @@ export const OperationViewSection = () => {
         if (entry.isIntersecting) {
           addOperations();
         }
-        console.log(`Element ${entry.target.id} is ${entry.isIntersecting ? 'visible' : 'not visible'}`);
       });
     };
 

@@ -13,10 +13,6 @@ interface Props extends HtmlHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<Props> = ({ variant, children, className, ...props }) => {
-  if (children === 'ru') {
-    console.log(variant, s);
-  }
-
   return (
     <button className={clsx(className, s.button, s[`button-${variant}`])} {...props}>
       {children}
