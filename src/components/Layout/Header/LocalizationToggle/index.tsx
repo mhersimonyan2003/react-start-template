@@ -4,7 +4,7 @@ import { Button, ButtonVariant } from '../../../Button';
 
 import s from './index.module.scss';
 
-const LocalizationToggle: React.FC = () => {
+export const LocalizationToggle: React.FC = () => {
   const { language, toggleLanguage } = useLocalizationContext();
 
   return (
@@ -13,5 +13,3 @@ const LocalizationToggle: React.FC = () => {
     </Button>
   );
 };
-
-export default LocalizationToggle;

@@ -36,9 +36,5 @@ export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ chil
 
   const value = useMemo(() => ({ language, toggleLanguage }), [language, toggleLanguage]);
 
-  return (
-    <LocalizationContext.Provider value={value}>
-      <div>{children}</div>
-    </LocalizationContext.Provider>
-  );
+  return <LocalizationContext.Provider value={value}>{children}</LocalizationContext.Provider>;
 };

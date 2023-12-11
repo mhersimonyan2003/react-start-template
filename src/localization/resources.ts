@@ -5,20 +5,32 @@ export const resources = {
   en: {
     translation: {
       global: {
+        edit: 'Edit',
         openModal: 'Open Modal',
         modalInput: {
           placeholder: 'Modal Text...',
         },
+      },
+      operation: {
+        showMore: 'Show More',
+        randomOperationTitle: 'Clothes sale',
+        randomOperationDescription: 'Selling quality clothes at good prices',
       },
     },
   },
   ru: {
     translation: {
       global: {
+        edit: 'Редактировать',
         openModal: 'Открыть Модалку',
         modalInput: {
           placeholder: 'Текст Модалки...',
         },
+      },
+      operation: {
+        showMore: 'Показать ещё',
+        randomOperationTitle: 'Продажа одежды',
+        randomOperationDescription: 'Продажа качественной одежды, низкие цены',
       },
     },
   },

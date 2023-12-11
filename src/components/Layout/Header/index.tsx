@@ -1,11 +1,11 @@
 import React from 'react';
 import Logo from '../../Logo';
-import ThemeToggle from './ThemeToggle';
+import { ThemeToggle } from './ThemeToggle';
+import { LocalizationToggle } from './LocalizationToggle';
 
 import s from './index.module.scss';
-import LocalizationToggle from './LocalizationToggle';
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className={s.header}>
       <Logo />
@@ -16,5 +16,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

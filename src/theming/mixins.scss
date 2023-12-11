@@ -25,10 +25,10 @@ map-get - встроенная функция sass, которая достае�
 например theme(border, var, 1px solid) создаст border: 1px solid varValue(тот цвет, который находится в по ключу var)
 */
 @mixin theme($property, $var, $before: null, $after: null) {
-  @at-root html:global(.light) #{&} {
+  @at-root :global(.light) #{&} {
     #{$property}: #{$before} #{map-get($light, $var)} #{$after};
   }
-  @at-root html:global(.dark) #{&} {
+  @at-root :global(.dark) #{&} {
     #{$property}: #{$before} #{map-get($dark, $var)} #{$after};
   }
 }
