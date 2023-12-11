@@ -21,21 +21,10 @@ const KEY = 'theme';
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(KEY) as Theme) || Theme.light);
 
-  useEffect(() => {
-    const html = document.body.parentElement;
-    if (html) {
-      html.classList.add((localStorage.getItem(KEY) as Theme) || Theme.light);
-    }
-  }, []);
-
   const toggleTheme = useCallback(() => {
     setTheme((theme) => {
       const newTheme = theme === Theme.light ? Theme.dark : Theme.light;
       localStorage.setItem(KEY, newTheme);
-      const html = document.body.parentElement;
-      if (html) {
-        html.classList.replace(theme, newTheme);
-      }
 
       return newTheme;
     });
@@ -45,7 +34,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={value}>
-      <div>{children}</div>
+      <div className={theme}>{children}</div>
     </ThemeContext.Provider>
   );
 };
