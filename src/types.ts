@@ -3,3 +3,11 @@ export enum Category {
   'marketing' = 'Маркетинг',
   'finance' = 'Финансы',
 }
+
+export interface Operation {
+  amount: number;
+  category: Category;
+  title: string;
+  description: string;
+  date: Date;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
-import { OperationView, OperationViewProps } from '../OperationView';
+import { Operation } from '../../types';
+import { OperationView } from '../OperationView';
 
 import s from './index.module.scss';
 
 interface Props {
-  data: Array<OperationViewProps>;
+  data: Array<Operation>;
 }
 
 const OperationViewList: React.FC<Props> = ({ data }) => {

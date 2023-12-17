@@ -1,0 +1,28 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input__label {
+  font-weight: bold;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease; /* Add a smooth transition effect */
+
+  &:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+
+  &.error {
+    border-color: #e74c3c; /* Change border color for invalid state */
+  }
+}
+
+.input_error {
+  color: #e74c3c;
+  margin-top: 8px;
+}

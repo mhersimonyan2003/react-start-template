@@ -1,14 +1,9 @@
 import React from 'react';
-import { Category } from '../../types';
+import { Operation } from '../../types';
 
 import s from './index.module.scss';
 
-interface Props {
-  amount: number;
-  category: Category;
-  title: string;
-  description: string;
-}
+type Props = Omit<Operation, 'date'>;
 
 export const OperationSummary: React.FC<Props> = ({ amount, category, title, description }) => {
   return (

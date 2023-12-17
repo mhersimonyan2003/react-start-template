@@ -1,20 +1,12 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { formatDate } from '../../helpers';
-import { Category } from '../../types';
+import { Operation } from '../../types';
 import { Button, ButtonVariant } from '../Button';
 
 import s from './index.module.scss';
-import { useTranslation } from 'react-i18next';
 
-export interface OperationViewProps {
-  amount: number;
-  category: Category;
-  title: string;
-  description: string;
-  date: Date;
-}
-
-export const OperationView: React.FC<OperationViewProps> = ({ amount, category, title, description, date }) => {
+export const OperationView: React.FC<Operation> = ({ amount, category, title, description, date }) => {
   const { t } = useTranslation();
 
   return (

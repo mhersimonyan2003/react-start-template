@@ -6,12 +6,17 @@ import { ThemeProvider } from './theming';
 import { LocalizationProvider } from './localization';
 import { ModalWithControls } from './components/ModalWithControls';
 import { OperationViewSection } from './sections/OperationViewSection';
+import { AuthForm, OperationForm } from './sections/Forms';
+import { ProfileForm } from './sections/Forms/ProfileForm';
 
 function App() {
   return (
     <ThemeProvider>
       <LocalizationProvider>
         <Layout>
+          <AuthForm />
+          <OperationForm />
+          <ProfileForm />
           <ModalWithControls />
           <OperationSummary
             amount={50.0}

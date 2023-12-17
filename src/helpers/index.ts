@@ -1,5 +1,4 @@
-import { Category } from '../types';
-import { OperationViewProps } from '../components/OperationView';
+import { Category, Operation } from '../types';
 
 export const formatDate = (date: Date) => {
   const d = new Date(date);
@@ -13,7 +12,7 @@ export const formatDate = (date: Date) => {
   return [year, month, day].join('-');
 };
 
-export const createRandomOperation = (): OperationViewProps => ({
+export const createRandomOperation = (): Operation => ({
   date: new Date(),
   title: 'operation.randomOperationTitle',
   description: 'operation.randomOperationDescription',
