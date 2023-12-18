@@ -46,7 +46,9 @@ export const RegisterForm: React.FC = () => {
           type="password"
         />
       </div>
-      <Button variant={ButtonVariant.primary}>{t('forms.authForm.signUpButton')}</Button>
+      <div className={s['form__buttons']}>
+        <Button variant={ButtonVariant.primary}>{t('forms.authForm.signUpButton')}</Button>
+      </div>
     </form>
   );
 };

@@ -30,9 +30,11 @@ export const Modal: React.FC<Props> = ({ container = document.body, title, visib
     <div className={s.modal} hidden={!visible}>
       <div className={s.modal__backdrop} />
       <div className={s.modal__card}>
-        {title && <h4 className={s.modal__card_title}>{title}</h4>}
-        <div className={s.modal__card__close} onClick={closeModal} />
-        {children}
+        <div className={s.modal__card__header}>
+          {title && <h4 className={s.modal__card_header__title}>{title}</h4>}
+          <div className={s.modal__card__close} onClick={closeModal} />
+        </div>
+        <div className={s.modal__card__content}>{children}</div>
       </div>
     </div>,
     container

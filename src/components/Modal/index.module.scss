@@ -22,11 +22,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  height: 450px;
+  min-height: 300px;
   max-height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 15px;
   border-radius: 8px;
   background-color: #fff;
+}
+
+.modal__card__header {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.modal__card_header__title {
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .modal__card__close {

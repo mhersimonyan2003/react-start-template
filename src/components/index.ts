@@ -8,4 +8,4 @@ export * from './Modal';
 export * from './ModalWithControls';
 export * from './OperationSummary';
 export * from './OperationView';
-export * from './OperationViewList';
+export * from '../sections/OperationViewSection/OperationViewList';

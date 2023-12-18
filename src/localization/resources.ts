@@ -11,7 +11,14 @@ export const resources = {
           placeholder: 'Modal Text...',
         },
       },
-      operation: {
+      navbar: {
+        items: {
+          profile: 'Profile',
+          operations: 'Operations',
+        },
+      },
+      operations: {
+        add: 'Add Operation',
         showMore: 'Show More',
         randomOperationTitle: 'Clothes sale',
         randomOperationDescription: 'Selling quality clothes at good prices',
@@ -47,7 +54,14 @@ export const resources = {
           placeholder: 'Текст Модалки...',
         },
       },
-      operation: {
+      navbar: {
+        items: {
+          profile: 'Profile',
+          operations: 'Operations',
+        },
+      },
+      operations: {
+        add: 'Add Operation',
         showMore: 'Показать ещё',
         randomOperationTitle: 'Продажа одежды',
         randomOperationDescription: 'Продажа качественной одежды, низкие цены',

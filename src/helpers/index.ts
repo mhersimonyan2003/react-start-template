@@ -14,8 +14,8 @@ export const formatDate = (date: Date) => {
 
 export const createRandomOperation = (): Operation => ({
   date: new Date(),
-  title: 'operation.randomOperationTitle',
-  description: 'operation.randomOperationDescription',
+  title: 'operations.randomOperationTitle',
+  description: 'operations.randomOperationDescription',
   amount: Math.round(Math.random() * 10 ** 3),
   category: Object.values(Category)[Math.floor(Math.random() * Object.keys(Category).length)],
 });

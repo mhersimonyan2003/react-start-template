@@ -33,45 +33,40 @@ export const OperationForm: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className={s['form_wrapper']}>
-      <form className={s['form']} onSubmit={handleSubmit(onSubmit)}>
-        <h2 className={s['form__title']}>
-          {formType === OperationFormType.update
-            ? t('forms.operationForm.updateTitle')
-            : t('forms.operationForm.createTitle')}
-        </h2>
-        <div className={s['form__inputs']}>
-          <Input label="Title" name="title" placeholder="Title" error={errors.title?.message} {...register('title')} />
-          <Input
-            label="Amount"
-            name="amount"
-            placeholder="Amount"
-            error={errors.amount?.message}
-            {...register('amount')}
-            type="number"
-          />
-          <Textarea
-            label="Description"
-            name="description"
-            placeholder="Description"
-            error={errors.description?.message}
-            {...register('description')}
-          />
-          <Select
-            label="Category"
-            name="category"
-            placeholder="Category"
-            options={Object.values(Category)}
-            error={errors.category?.message}
-            {...register('category')}
-          />
-        </div>
+    <form className={s['form']} onSubmit={handleSubmit(onSubmit)}>
+      <div className={s['form__inputs']}>
+        <Input label="Title" name="title" placeholder="Title" error={errors.title?.message} {...register('title')} />
+        <Input
+          label="Amount"
+          name="amount"
+          placeholder="Amount"
+          error={errors.amount?.message}
+          {...register('amount')}
+          type="number"
+        />
+        <Textarea
+          label="Description"
+          name="description"
+          placeholder="Description"
+          error={errors.description?.message}
+          {...register('description')}
+        />
+        <Select
+          label="Category"
+          name="category"
+          placeholder="Category"
+          options={Object.values(Category)}
+          error={errors.category?.message}
+          {...register('category')}
+        />
+      </div>
+      <div className={s['form__buttons']}>
         <Button variant={ButtonVariant.primary}>
           {formType === OperationFormType.update
             ? t('forms.operationForm.updateButton')
             : t('forms.operationForm.createButton')}
         </Button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };

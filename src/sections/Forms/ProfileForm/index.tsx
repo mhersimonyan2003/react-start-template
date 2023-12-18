@@ -74,7 +74,9 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
             type="date"
           />
         </div>
-        <Button variant={ButtonVariant.primary}>{t('forms.profileForm.updateButton')}</Button>
+        <div className={s['form__buttons']}>
+          <Button variant={ButtonVariant.primary}>{t('forms.profileForm.updateButton')}</Button>
+        </div>
       </form>
     </div>
   );

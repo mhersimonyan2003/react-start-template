@@ -11,3 +11,8 @@ export interface Operation {
   description: string;
   date: Date;
 }
+
+export enum Page {
+  'profile' = 'profile',
+  'operations' = 'operations',
+}
