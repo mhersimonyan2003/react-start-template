@@ -22,17 +22,19 @@ export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ chil
     i18n.language in Language ? (i18n.language as Language) : Language.ru
   );
 
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [i18n, language]);
+  // useEffect(() => {
+  //   i18n.changeLanguage(language);
+  // }, [i18n, language]);
 
   const toggleLanguage = useCallback(() => {
     setLanguage((language) => {
       const newLanguage = language === Language.ru ? Language.en : Language.ru;
       localStorage.setItem(LANG_STORAGE_KEY, newLanguage);
+
+      /* При изменении языка, возникает ошибка из за этой строки */ i18n.changeLanguage(language);
       return newLanguage;
     });
-  }, []);
+  }, [i18n]);
 
   const value = useMemo(() => ({ language, toggleLanguage }), [language, toggleLanguage]);
 
