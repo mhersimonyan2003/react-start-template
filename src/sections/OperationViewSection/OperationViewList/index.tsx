@@ -1,13 +1,14 @@
 import React from 'react';
-import { OperationView, OperationViewProps } from '../OperationView';
+import { Operation } from '../../../types';
+import { OperationView } from '../../../components/OperationView';
 
 import s from './index.module.scss';
 
 interface Props {
-  data: Array<OperationViewProps>;
+  data: Array<Operation>;
 }
 
-const OperationViewList: React.FC<Props> = ({ data }) => {
+export const OperationViewList: React.FC<Props> = ({ data }) => {
   return (
     <div className={s['opeation-view-list']}>
       {data.map((operationViewData, index) => (
@@ -16,5 +17,3 @@ const OperationViewList: React.FC<Props> = ({ data }) => {
     </div>
   );
 };
-
-export default OperationViewList;

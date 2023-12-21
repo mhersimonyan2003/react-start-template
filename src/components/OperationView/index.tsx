@@ -1,27 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { formatDate } from '../../helpers';
-import { Category } from '../../types';
+import { Operation } from '../../types';
+import { OperationForm } from '../../sections';
 import { Button, ButtonVariant } from '../Button';
+import { Modal } from '../Modal';
 
 import s from './index.module.scss';
-import { useTranslation } from 'react-i18next';
 
-export interface OperationViewProps {
-  amount: number;
-  category: Category;
-  title: string;
-  description: string;
-  date: Date;
-}
-
-export const OperationView: React.FC<OperationViewProps> = ({ amount, category, title, description, date }) => {
+export const OperationView: React.FC<Operation> = (props) => {
+  const { amount, category, title, description, date } = props;
   const { t } = useTranslation();
+
+  const [editModalVisible, setEditModalVisible] = useState(false);
+
+  const openEditModal = () => {
+    setEditModalVisible(true);
+  };
 
   return (
     <div className={s['opeation-view']}>
       <div className={s['opeation-view__header']}>
         <h2>{t(title)}</h2>
-        <Button variant={ButtonVariant.primary}>{t('global.edit')}</Button>
+        <Button variant={ButtonVariant.primary} onClick={openEditModal}>
+          {t('global.edit')}
+        </Button>
       </div>
       <div className={s['opeation-view__details']}>
         <div className={s['opeation-view__amount']}>
@@ -37,6 +40,9 @@ export const OperationView: React.FC<OperationViewProps> = ({ amount, category, 
           <b>Дата:</b> {formatDate(date)}
         </div>
       </div>
+      <Modal title={t('forms.operationForm.updateTitle')} visible={editModalVisible} setVisible={setEditModalVisible}>
+        <OperationForm data={props} />
+      </Modal>
     </div>
   );
 };

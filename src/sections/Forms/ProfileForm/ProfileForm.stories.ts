@@ -1,24 +1,22 @@
 import type { Meta } from '@storybook/react';
 
-import { Modal } from '.';
+import { ProfileForm } from '.';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Modal> = {
-  title: 'Example/Modal',
-  component: Modal,
+const meta: Meta<typeof ProfileForm> = {
+  title: 'Example/ProfileForm',
+  component: ProfileForm,
   tags: ['autodocs'],
-  argTypes: {
-    visible: { control: 'boolean' },
-    children: { control: 'text' },
-  },
 };
 
 export default meta;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const MainModal = {
+export const UpdateProfileForm = {
   args: {
-    visible: false,
-    children: 'ModalText',
+    data: {
+      firstname: 'Mher',
+      birthdate: '2003-06-06',
+    },
   },
 };

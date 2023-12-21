@@ -9,6 +9,7 @@
   @include theme(background-color, logoBg);
   @include theme(color, logoColor);
   border-radius: 8px;
+  text-decoration: none;
 }
 
 .logo::before {

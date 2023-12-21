@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRandomOperation } from '../../helpers';
 import { operationsData } from './constants';
-import OperationViewList from '../../components/OperationViewList';
+import { OperationViewList } from './OperationViewList';
+import { OperationCreate } from './OperationCreate';
 
 import s from './index.module.scss';
 
@@ -40,6 +41,7 @@ export const OperationViewSection = () => {
 
   return (
     <div className={s['opeation-view-section']}>
+      <OperationCreate />
       <OperationViewList data={data} />
       <div className={s['opeation-view__more-block']} ref={moreBlockRef} />
     </div>
