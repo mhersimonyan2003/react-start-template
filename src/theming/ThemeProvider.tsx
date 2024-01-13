@@ -1,6 +1,6 @@
-import React, { createContext, FC, useCallback, useContext, useState, useMemo, useEffect } from 'react';
+import React, { createContext, FC, useCallback, useContext, useState, useMemo } from 'react';
 import { Theme } from './types';
-import '../styles/index.scss';
+import '@/styles/index.scss';
 
 export type ThemeProviderProps = {
   children: React.ReactNode;

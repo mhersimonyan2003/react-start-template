@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, ButtonVariant, Modal } from '../../../components';
 import { useTranslation } from 'react-i18next';
-import { OperationForm } from '../../../sections';
+import { Button, ButtonVariant, Modal } from '@/components';
+import { OperationForm } from '@/sections';
 
 export const OperationCreate: React.FC = () => {
   const { t } = useTranslation();

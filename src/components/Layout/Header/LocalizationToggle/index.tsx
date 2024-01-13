@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLocalizationContext } from '../../../../localization';
-import { Button, ButtonVariant } from '../../../Button';
+import { useLocalizationContext } from '@/localization';
+import { Button, ButtonVariant } from '@/components';
 
 import s from './index.module.scss';
 

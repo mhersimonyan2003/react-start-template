@@ -16,3 +16,11 @@ export enum Page {
   'profile' = 'profile',
   'operations' = 'operations',
 }
+
+export interface Profile {
+  firstname: string;
+  lastname: string;
+  email: string;
+  tel: string;
+  birthdate: string;
+}

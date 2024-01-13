@@ -1,7 +1,7 @@
 import React, { Dispatch, ReactNode, SetStateAction, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 import s from './index.module.scss';
-import { createPortal } from 'react-dom';
 
 interface Props {
   container?: HTMLElement;

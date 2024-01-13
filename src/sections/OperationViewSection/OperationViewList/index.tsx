@@ -1,6 +1,6 @@
 import React from 'react';
-import { Operation } from '../../../types';
-import { OperationView } from '../../../components/OperationView';
+import { Operation } from '@/types';
+import { OperationView } from '@/components';
 
 import s from './index.module.scss';
 
