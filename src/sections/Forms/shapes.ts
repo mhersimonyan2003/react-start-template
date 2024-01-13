@@ -11,8 +11,7 @@ export const operationFormShape = {
   amount: yup
     .number()
     .transform((value) => (Number.isNaN(value) ? null : value))
-    .required('Amount is required')
-    .min(0, 'Amount must be greater than or equal to 0'),
+    .required('Amount is required'),
   description: yup.string().required('Description is required'),
   category: yup.string().required('Category is required').oneOf(Object.values(Category), 'Invalid category'),
 };
