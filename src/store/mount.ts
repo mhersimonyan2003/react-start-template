@@ -12,7 +12,7 @@ export const mountActions = mountSlice.actions;
 
 export const mountSelectors = {
   get: (state: AppState): AppState['mount'] => {
-    console.log('mount get');
+    // console.log('mount get');
 
     return state.mount;
   },

@@ -1,49 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { createRandomOperation } from '@/helpers';
-import { operationsData } from './constants';
+import React, { useState } from 'react';
+import { useAppSelector } from '@/store';
+import { tokenSelectors } from '@/store/token';
 import { OperationViewList } from './OperationViewList';
 import { OperationCreate } from './OperationCreate';
+import { useOperations } from '../../hooks/useOperations';
 
 import s from './index.module.scss';
+import { Pagination } from '@/components/Pagination';
 
-const MORE_OPERATIONS_COUNT = 10;
+// const MORE_OPERATIONS_COUNT = 10;
 
 export const OperationViewSection = () => {
-  const [data, setData] = useState(operationsData);
+  const [pageNumber, setPageNumber] = useState(1);
+  const { operations, pagesTotal } = useOperations({ pageNumber });
 
-  const moreBlockRef = useRef<HTMLDivElement>(null);
-
-  const addOperations = () => {
-    const newOperations = new Array(MORE_OPERATIONS_COUNT).fill(createRandomOperation());
-    setData(data.concat(newOperations));
-  };
-
-  useEffect(() => {
-    const callback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          addOperations();
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback);
-
-    if (moreBlockRef.current) {
-      observer.observe(moreBlockRef.current);
-    }
-
-    return () => {
-      // Cleanup: Stop observing when the component unmounts
-      observer.disconnect();
-    };
-  });
+  const token = useAppSelector(tokenSelectors.get);
 
   return (
     <div className={s['opeation-view-section']}>
-      <OperationCreate />
-      <OperationViewList data={data} />
-      <div className={s['opeation-view__more-block']} ref={moreBlockRef} />
+      {Boolean(token) && <OperationCreate />}
+      <OperationViewList data={operations} />
+      <Pagination pagesTotal={pagesTotal} pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 };

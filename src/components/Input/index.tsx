@@ -15,7 +15,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     <label className={s['input-wrapper']}>
       {label && <div className={s.input__label} />}
       <input className={clsx(s.input, { [s.error]: error })} ref={ref} {...inputProps} />
-      {error && <p className={s.input_error}>{error}</p>}
+      {error && <p className={s.input__error}>{error}</p>}
     </label>
   );
 });

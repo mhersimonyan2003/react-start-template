@@ -1,4 +1,4 @@
-import React, { HtmlHTMLAttributes, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import clsx from 'clsx';
 
 import s from './index.module.scss';
@@ -7,7 +7,7 @@ export enum ButtonVariant {
   'primary' = 'primary',
 }
 
-interface Props extends HtmlHTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonVariant.primary;
   children: ReactNode;
 }

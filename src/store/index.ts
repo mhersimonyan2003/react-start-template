@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { token } from './token';
 import { mount } from './mount';
@@ -19,3 +20,4 @@ sagaMiddleware.run(sagas);
 
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;

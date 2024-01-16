@@ -6,9 +6,11 @@ import { AppState } from './index';
 
 const set: CaseReducer<Profile, PayloadAction<Profile>> = (_, action) => action.payload;
 
+const initialState: Profile = null;
+
 const profileSlice = createSlice({
   name: 'profile',
-  initialState: null,
+  initialState,
   reducers: {
     set,
   },
@@ -17,7 +19,7 @@ export const profileActions = profileSlice.actions;
 
 export const profileSelectors = {
   get: (state: AppState): AppState['profile'] => {
-    console.log('profileSelectors get');
+    // console.log('profileSelectors get');
 
     return state.profile;
   },

@@ -1,15 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { navbarItems } from './constants';
 import { tokenSelectors } from '@/store/token';
+import { useAppSelector } from '@/store';
+import { navbarItems } from './constants';
 
 import s from './index.module.scss';
 
 export const Navbar: React.FC = () => {
   const { t } = useTranslation();
-  const token = useSelector(tokenSelectors.get);
+  const token = useAppSelector(tokenSelectors.get);
 
   return (
     <nav className={s.navbar}>
