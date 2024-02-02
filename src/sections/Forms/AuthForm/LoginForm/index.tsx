@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
 import { tokenActions } from '@/store/token';
 import { Input, Button, ButtonVariant } from '@/components';
+import { login } from '@/api/auth';
 import validationSchema from '../schema';
 import { AuthFormData } from '../types';
 
@@ -23,10 +24,14 @@ export const LoginForm: React.FC = () => {
     resolver: yupResolver(validationSchema) as Resolver<AuthFormData>,
   });
 
-  const onSubmit: SubmitHandler<AuthFormData> = (data) => {
-    console.log(data);
-    dispatch(tokenActions.gen());
-    reset();
+  const onSubmit: SubmitHandler<AuthFormData> = async (data) => {
+    try {
+      const { token } = await login(data);
+      dispatch(tokenActions.set(token));
+      reset();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

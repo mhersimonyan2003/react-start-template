@@ -1,4 +1,6 @@
 import React from 'react';
+import { useAppSelector } from '@/store';
+import { tokenSelectors } from '@/store/token';
 import { Logo } from '@/components';
 import { ThemeToggle } from './ThemeToggle';
 import { LocalizationToggle } from './LocalizationToggle';
@@ -8,6 +10,8 @@ import { Logout } from './Logout';
 import s from './index.module.scss';
 
 export const Header = () => {
+  const token = useAppSelector(tokenSelectors.get);
+
   return (
     <div className={s.header}>
       <Logo />
@@ -15,7 +19,7 @@ export const Header = () => {
       <div className={s.header__controls}>
         <LocalizationToggle />
         <ThemeToggle />
-        <Logout />
+        {Boolean(token) && <Logout />}
       </div>
     </div>
   );

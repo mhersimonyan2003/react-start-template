@@ -22,6 +22,8 @@ export const Modal: React.FC<Props> = ({ container = document.body, title, visib
     };
   }, [visible]);
 
+  if (!visible) return null;
+
   const closeModal = () => {
     setVisible(false);
   };

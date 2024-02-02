@@ -1,8 +1,11 @@
 import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
 import { Input, Button, ButtonVariant } from '@/components';
+import { tokenActions } from '@/store/token';
+import { register as registerApi } from '@/api/auth';
 import validationSchema from '../schema';
 import { AuthFormData } from '../types';
 
@@ -10,6 +13,7 @@ import s from '../../index.module.scss';
 
 export const RegisterForm: React.FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -20,9 +24,14 @@ export const RegisterForm: React.FC = () => {
     resolver: yupResolver(validationSchema) as Resolver<AuthFormData>,
   });
 
-  const onSubmit: SubmitHandler<AuthFormData> = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit: SubmitHandler<AuthFormData> = async (data) => {
+    try {
+      const { token } = await registerApi(data);
+      dispatch(tokenActions.set(token));
+      reset();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

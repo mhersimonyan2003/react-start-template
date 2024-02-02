@@ -1,5 +1,4 @@
 import * as yup from 'yup';
-import { Category } from '@/types';
 
 export const authFormShape = {
   email: yup.string().required('Email is required').email('Invalid email address'),
@@ -7,19 +6,16 @@ export const authFormShape = {
 };
 
 export const operationFormShape = {
-  title: yup.string().required('Title is required'),
+  name: yup.string().required('Name is required'),
   amount: yup
     .number()
     .transform((value) => (Number.isNaN(value) ? null : value))
     .required('Amount is required'),
-  description: yup.string().required('Description is required'),
-  category: yup.string().required('Category is required').oneOf(Object.values(Category), 'Invalid category'),
+  desc: yup.string(),
+  categoryId: yup.string().required('Category is required'),
+  type: yup.string().required('Type is required'),
 };
 
 export const profileFormShape = {
-  firstname: yup.string().required('First Name is required'),
-  lastname: yup.string().required('Last Name is required'),
-  email: yup.string().required('Email is required').email('Invalid email address'),
-  tel: yup.string().required('Phone Number is required'),
-  birthdate: yup.string().required('Birthdate is required'),
+  name: yup.string().required('First Name is required').min(7, 'Nickname must be at least 7 characters long'),
 };

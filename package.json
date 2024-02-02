@@ -67,6 +67,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@reduxjs/toolkit": "^2.0.1",
+    "axios": "^1.6.5",
     "clsx": "^2.1.0",
     "eslint-webpack-plugin": "^4.0.1",
     "i18next": "^23.7.16",

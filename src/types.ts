@@ -1,15 +1,25 @@
-export enum Category {
-  'sales' = 'Продажи',
-  'marketing' = 'Маркетинг',
-  'finance' = 'Финансы',
+import { CategoryApi } from './api/categories/types';
+
+export interface Category extends CategoryApi {
+  key: string;
+  value: string;
+}
+
+export enum OperationType {
+  'Profit' = 'Profit',
+  'Cost' = 'Cost',
 }
 
 export interface Operation {
+  id: string;
+  name: string;
+  desc?: string;
+  date: string;
+  createdAt: string;
+  updatedAt: string;
   amount: number;
-  category: Category;
-  title: string;
-  description: string;
-  date: Date;
+  category: CategoryApi;
+  type: OperationType;
 }
 
 export enum Page {
@@ -18,9 +28,24 @@ export enum Page {
 }
 
 export interface Profile {
-  firstname: string;
-  lastname: string;
+  id: string;
+  name?: string;
   email: string;
-  tel: string;
-  birthdate: string;
+  signUpDate: string;
+}
+
+export interface Pagination {
+  pageNumber: number;
+  pageSize: number;
+  total: number;
+}
+
+enum SortDirection {
+  'ASC' = 'ASC',
+  'DESC' = 'DESC',
+}
+
+export interface Sorting<Field> {
+  type: SortDirection;
+  field: Field;
 }
