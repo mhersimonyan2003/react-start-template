@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Layout } from '@/components/Layout';
 import { ThemeProvider } from '@/theming';
@@ -9,7 +9,7 @@ import { store } from '@/store';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <ThemeProvider>
           <LocalizationProvider>
@@ -19,7 +19,7 @@ function App() {
           </LocalizationProvider>
         </ThemeProvider>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
