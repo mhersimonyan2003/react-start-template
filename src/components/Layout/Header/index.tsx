@@ -1,10 +1,11 @@
 import React from 'react';
-import Logo from '../../Logo';
+import { Logo } from '@/components';
 import { ThemeToggle } from './ThemeToggle';
 import { LocalizationToggle } from './LocalizationToggle';
+import { Navbar } from './Navbar';
+import { Logout } from './Logout';
 
 import s from './index.module.scss';
-import { Navbar } from './Navbar';
 
 export const Header = () => {
   return (
@@ -14,6 +15,7 @@ export const Header = () => {
       <div className={s.header__controls}>
         <LocalizationToggle />
         <ThemeToggle />
+        <Logout />
       </div>
     </div>
   );

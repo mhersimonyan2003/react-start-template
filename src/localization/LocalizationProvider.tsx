@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LANG_STORAGE_KEY, Language } from './settings';
 
@@ -22,19 +22,12 @@ export const LocalizationProvider: React.FC<LocalizationProviderProps> = ({ chil
     i18n.language in Language ? (i18n.language as Language) : Language.ru
   );
 
-  // useEffect(() => {
-  //   i18n.changeLanguage(language);
-  // }, [i18n, language]);
-
   const toggleLanguage = useCallback(() => {
-    setLanguage((language) => {
-      const newLanguage = language === Language.ru ? Language.en : Language.ru;
-      localStorage.setItem(LANG_STORAGE_KEY, newLanguage);
-
-      /* При изменении языка, возникает ошибка из за этой строки */ i18n.changeLanguage(language);
-      return newLanguage;
-    });
-  }, [i18n]);
+    const newLanguage = language === Language.ru ? Language.en : Language.ru;
+    localStorage.setItem(LANG_STORAGE_KEY, newLanguage);
+    i18n.changeLanguage(newLanguage);
+    setLanguage(newLanguage);
+  }, [i18n, language]);
 
   const value = useMemo(() => ({ language, toggleLanguage }), [language, toggleLanguage]);
 

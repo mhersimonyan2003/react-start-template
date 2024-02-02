@@ -1,4 +1,4 @@
-import { Category, Operation } from '../types';
+import { Category, Operation } from '@/types';
 
 export const formatDate = (date: Date) => {
   const d = new Date(date);

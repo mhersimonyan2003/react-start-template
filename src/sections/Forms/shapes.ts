@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { Category } from '../../types';
+import { Category } from '@/types';
 
 export const authFormShape = {
   email: yup.string().required('Email is required').email('Invalid email address'),

@@ -1,15 +1,18 @@
 import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
+import { tokenActions } from '@/store/token';
+import { Input, Button, ButtonVariant } from '@/components';
 import validationSchema from '../schema';
 import { AuthFormData } from '../types';
-import { Input, Button, ButtonVariant } from '../../../../components';
 
 import s from '../../index.module.scss';
 
 export const LoginForm: React.FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -22,6 +25,7 @@ export const LoginForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<AuthFormData> = (data) => {
     console.log(data);
+    dispatch(tokenActions.gen());
     reset();
   };
 

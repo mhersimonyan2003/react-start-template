@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { formatDate } from '../../helpers';
-import { Operation } from '../../types';
-import { OperationForm } from '../../sections';
-import { Button, ButtonVariant } from '../Button';
-import { Modal } from '../Modal';
+import { formatDate } from '@/helpers';
+import { Operation } from '@/types';
+import { OperationForm } from '@/sections';
+import { Button, ButtonVariant, Modal } from '@/components';
 
 import s from './index.module.scss';
 

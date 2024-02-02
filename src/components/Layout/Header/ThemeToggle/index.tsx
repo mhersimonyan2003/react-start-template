@@ -1,7 +1,7 @@
 import React from 'react';
-import { Theme, useThemeContext } from '../../../../theming';
-import MoonIcon from '../../../../icons/moon.svg';
-import SunIcon from '../../../../icons/sun.svg';
+import { Theme, useThemeContext } from '@/theming';
+import MoonIcon from '@/icons/moon.svg';
+import SunIcon from '@/icons/sun.svg';
 
 import s from './index.module.scss';
 

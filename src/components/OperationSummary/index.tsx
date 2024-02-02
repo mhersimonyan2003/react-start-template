@@ -1,5 +1,5 @@
 import React from 'react';
-import { Operation } from '../../types';
+import { Operation } from '@/types';
 
 import s from './index.module.scss';
 

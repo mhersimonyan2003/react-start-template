@@ -2,9 +2,9 @@ import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
 import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
+import { Input, Button, ButtonVariant } from '@/components';
 import validationSchema from '../schema';
 import { AuthFormData } from '../types';
-import { Input, Button, ButtonVariant } from '../../../../components';
 
 import s from '../../index.module.scss';
 

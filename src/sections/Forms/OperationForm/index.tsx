@@ -2,10 +2,10 @@ import React from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
 import { Resolver, SubmitHandler, useForm } from 'react-hook-form';
-import { Category, Operation } from '../../../types';
+import { Button, ButtonVariant, Input, Select, Textarea } from '@/components';
+import { Category, Operation } from '@/types';
 import { OperationFormData, OperationFormType } from './types';
 import validationSchema from './schema';
-import { Button, ButtonVariant, Input, Select, Textarea } from '../../../components';
 
 import s from '../index.module.scss';
 

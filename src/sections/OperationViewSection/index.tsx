@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { createRandomOperation } from '../../helpers';
+import { createRandomOperation } from '@/helpers';
 import { operationsData } from './constants';
 import { OperationViewList } from './OperationViewList';
 import { OperationCreate } from './OperationCreate';
